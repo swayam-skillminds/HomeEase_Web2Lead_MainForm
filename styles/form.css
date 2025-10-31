@@ -3,11 +3,18 @@
 .form-main-content {
     flex: 1;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: var(--spacing-3xl) 0;
     background: linear-gradient(135deg, var(--primary-50) 0%, var(--bg-primary) 50%, var(--neutral-50) 100%);
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.form-main-content .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .form-wrapper {
