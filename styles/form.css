@@ -1,0 +1,228 @@
+/* Form Page Specific Styles */
+
+.form-main-content {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--bg-primary) 50%, var(--neutral-50) 100%);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.form-wrapper {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--spacing-3xl);
+    max-width: 800px;
+    width: 100%;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 2px solid var(--neutral-200);
+}
+
+.form-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.salesforce-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.section-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.required {
+    color: var(--primary-600);
+    font-weight: 600;
+}
+
+.salesforce-form input[type="text"],
+.salesforce-form input[type="email"],
+.salesforce-form input[type="tel"],
+.salesforce-form select,
+.salesforce-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: 2px solid var(--neutral-300);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    margin: 0;
+}
+
+.salesforce-form input[type="text"]:focus,
+.salesforce-form input[type="email"]:focus,
+.salesforce-form input[type="tel"]:focus,
+.salesforce-form select:focus,
+.salesforce-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-600);
+    box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.salesforce-form input[type="text"]:hover,
+.salesforce-form input[type="email"]:hover,
+.salesforce-form input[type="tel"]:hover,
+.salesforce-form select:hover,
+.salesforce-form textarea:hover {
+    border-color: var(--neutral-400);
+}
+
+.salesforce-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234B5563' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-md) center;
+    padding-right: var(--spacing-3xl);
+}
+
+.salesforce-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: var(--font-family);
+}
+
+.salesforce-form textarea::placeholder {
+    color: var(--neutral-400);
+}
+
+.form-submit {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--neutral-200);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit {
+    min-width: 200px;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-main-content {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .form-wrapper {
+        padding: var(--spacing-xl);
+        margin: var(--spacing-md);
+        border-radius: var(--radius-xl);
+    }
+    
+    .form-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .form-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .form-section {
+        gap: var(--spacing-md);
+    }
+    
+    .btn-submit {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Focus states for accessibility */
+.salesforce-form input:required:invalid:not(:placeholder-shown),
+.salesforce-form select:required:invalid {
+    border-color: #EF4444;
+}
+
+.salesforce-form input:required:valid,
+.salesforce-form select:required:valid {
+    border-color: var(--success-500);
+}
+
