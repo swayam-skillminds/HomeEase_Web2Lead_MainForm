@@ -27,6 +27,77 @@
     animation: fadeInUp 0.6s ease-out;
 }
 
+/* Form Type Selector */
+.form-type-selector {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+    background-color: var(--neutral-100);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-lg);
+}
+
+.form-type-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-family);
+}
+
+.form-type-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+.form-type-btn:hover {
+    background-color: var(--neutral-200);
+    color: var(--text-primary);
+}
+
+.form-type-btn.active {
+    background-color: var(--bg-primary);
+    color: var(--primary-600);
+    border-color: var(--primary-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-type-btn.active svg {
+    color: var(--primary-600);
+}
+
+/* Form Container Toggle */
+.form-container {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.form-container.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -205,6 +276,21 @@
     
     .form-subtitle {
         font-size: var(--font-size-base);
+    }
+    
+    .form-type-selector {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .form-type-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    .form-type-btn svg {
+        width: 18px;
+        height: 18px;
     }
     
     .form-row {
